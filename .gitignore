@@ -1,0 +1,5 @@
+/target
+/res
+*.json
+*.txt
+*.pem

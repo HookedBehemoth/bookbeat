@@ -1,0 +1,33 @@
+[package]
+name = "bookbeat"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.147", features = ["serde_derive"] }
+tokio = { version = "1.21.2", features = ["full"] }
+serde_json = "1.0.87"
+pico-args = "0.5.0"
+futures-util = { version = "0.3.25", default-features = false }
+url = "2.3.1"
+mp4ameta = "0.11.0"
+indicatif = "0.17.1"
+
+[dependencies.chrono]
+version = "0.4.22"
+default-features = false
+features = ["clock", "serde"]
+
+[dependencies.reqwest]
+version = "0.11.12"
+default-features = false
+features = [
+    "stream",
+    "rustls-tls",
+    "gzip",
+    "json"
+]
+
+[profile.release]
+lto = true
+panic = "abort"
