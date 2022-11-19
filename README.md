@@ -33,3 +33,6 @@ x-rate-limit-reset: 2022-11-05T14:25:48.3259713Z
 ```
 
 It appears that you'll be able to download 200 e-books/audiobooks per month. After that every three days you'll get three more downloads.
+
+## Tracing
+When using the `mitm` feature flag, the client will try to proxy all traffic through `http://127.0.0.1:8888` and load a trusted certificate, `cert.pem` out of the current working directory.

@@ -28,6 +28,9 @@ features = [
     "json"
 ]
 
+[features]
+mitm = []
+
 [profile.release]
 lto = true
 panic = "abort"

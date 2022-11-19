@@ -246,11 +246,11 @@ impl Client {
             .tcp_keepalive(keepalive)
             .default_headers(headers);
 
-        if cfg!(debug_assertions) {
+        if cfg!(feature = "mitm") {
             println!("Installing ssl proxy with certificate");
             let proxy = reqwest::Proxy::all("http://127.0.0.1:8888").unwrap();
-            let pem = include_bytes!("../cert.pem");
-            let cert = reqwest::Certificate::from_pem(pem).unwrap();
+            let pem = std::fs::read("cert.pem").unwrap();
+            let cert = reqwest::Certificate::from_pem(&pem).unwrap();
             builder = builder.proxy(proxy).add_root_certificate(cert);
         }
 
