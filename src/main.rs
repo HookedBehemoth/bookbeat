@@ -24,7 +24,8 @@ Options:
 
 Variable count options:
  --id [ID]              Bookbeat ID
- --isbn [ISBN]          International Standard Book Number
+ --audioisbn [ISBN]     International Standard Book Number (Audiobook)
+ --ebookisbn [ISBN]     International Standard Book Number (Ebook)
  --author [NAME]        Author Name
  --series [ID]          Series ID
  --language [LANG]      Language Name (Default: English)";
